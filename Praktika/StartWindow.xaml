@@ -1,0 +1,22 @@
+﻿<Window x:Class="Praktika.StartWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Добро пожаловать в Бюро Знакомств" Height="300" Width="400"
+        Background="#FDFDFD">
+    <!-- Нейтральный фон -->
+
+    <!-- Разметка основного контента -->
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Основное содержимое окна -->
+        <StackPanel Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="20">
+            <TextBlock Text="Добро пожаловать в Бюро Знакомств" Foreground="#FF4081" FontSize="16" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,0,0,20"/>
+            <Button x:Name="loginButton" Content="Войти" Margin="10" Padding="10" Background="#FF4081" Foreground="White" FontWeight="Bold" Click="LoginButton_Click"/>
+            <Button x:Name="registerButton" Content="Регистрация" Margin="10" Padding="10" Background="#FF4081" Foreground="White" FontWeight="Bold" Click="RegisterButton_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

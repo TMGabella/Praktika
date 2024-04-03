@@ -1,0 +1,45 @@
+﻿<Window x:Class="Praktika.AdminWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Панель управления администратора Бюро Знакомств" Height="500" Width="920"
+        Background="#FDFDFD">
+    
+
+    <Window.Resources>
+        <Style x:Key="DataGridHeaderStyle" TargetType="DataGridColumnHeader">
+            <Setter Property="Background" Value="#FF4081"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="BorderBrush" Value="#FF4081"/>
+            <Setter Property="BorderThickness" Value="0 0 0 2"/>
+            <Setter Property="Padding" Value="10"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+        </Style>
+    </Window.Resources>
+
+    <Grid Margin="10">
+        
+        <DataGrid x:Name="ClientsDataGrid" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True" SelectionMode="Single"
+                  Background="White" BorderBrush="#FF4081" BorderThickness="2" Foreground="#333" VerticalAlignment="Top" Height="350">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID Клиента" Binding="{Binding ClientId}" HeaderStyle="{StaticResource DataGridHeaderStyle}" />
+                <DataGridTextColumn Header="Полное Имя" Binding="{Binding FullName}" HeaderStyle="{StaticResource DataGridHeaderStyle}" />
+                <DataGridTextColumn Header="Возраст" Binding="{Binding Age}" HeaderStyle="{StaticResource DataGridHeaderStyle}" />
+                <DataGridTextColumn Header="Пол" Binding="{Binding Gender}" HeaderStyle="{StaticResource DataGridHeaderStyle}" />
+                <DataGridTextColumn Header="Электронная Почта" Binding="{Binding Email}" HeaderStyle="{StaticResource DataGridHeaderStyle}" />
+                <DataGridTextColumn Header="Интересы" Binding="{Binding Interests}" HeaderStyle="{StaticResource DataGridHeaderStyle}" />
+                <DataGridTextColumn Header="Тип Отношений" Binding="{Binding RelationshipType}" HeaderStyle="{StaticResource DataGridHeaderStyle}" />
+                <DataGridTextColumn Header="Предпочтения в Партнере" Binding="{Binding PartnerPreferences}" HeaderStyle="{StaticResource DataGridHeaderStyle}" />
+                
+                <DataGridTextColumn Header="Дата Создания" Binding="{Binding CreatedAt}" HeaderStyle="{StaticResource DataGridHeaderStyle}" />
+            </DataGrid.Columns>
+        </DataGrid>
+
+        
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="10">
+            <Button x:Name="AddButton" Content="Добавить" Click="AddButton_Click" Margin="5" Background="#FF4081" Foreground="White" FontWeight="Bold" BorderBrush="#FF4081" BorderThickness="2" Padding="10"/>
+            <Button x:Name="EditButton" Content="Редактировать" Click="EditButton_Click" Margin="5" Background="#FF4081" Foreground="White" FontWeight="Bold" BorderBrush="#FF4081" BorderThickness="2" Padding="10"/>
+            <Button x:Name="DeleteButton" Content="Удалить" Click="DeleteButton_Click" Margin="5" Background="#FF4081" Foreground="White" FontWeight="Bold" BorderBrush="#FF4081" BorderThickness="2" Padding="10"/>
+        </StackPanel>
+    </Grid>
+</Window>

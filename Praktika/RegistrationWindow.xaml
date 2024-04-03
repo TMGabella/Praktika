@@ -1,0 +1,48 @@
+﻿<Window x:Class="Praktika.RegistrationWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Регистрация в Бюро Знакомств" Height="400" Width="400"
+        Background="#FDFDFD">
+    
+    <Window.Resources>
+        <Style TargetType="TextBox">
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="Height" Value="40"/>
+            <Setter Property="Width" Value="200"/>
+            
+        </Style>
+        <Style TargetType="PasswordBox">
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="Height" Value="40"/>
+            <Setter Property="Width" Value="200"/>
+            
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="#FF4081"/>
+            
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Height" Value="40"/>
+            <Setter Property="Margin" Value="10"/>
+        </Style>
+    </Window.Resources>
+
+    
+    <Grid>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="Создайте аккаунт в Бюро Знакомств" FontSize="20" Margin="0,0,0,20" HorizontalAlignment="Center" Foreground="#FF4081"/>
+            
+            <TextBlock Text="Имя пользователя:" Margin="10,0,10,0 " Foreground="Gray"/>
+            <TextBox x:Name="usernameTextBox" ToolTip="Введите ваше имя пользователя"/>
+
+            
+            <TextBlock Text="Пароль:" Margin="10,10,10,0" Foreground="Gray"/>
+            <PasswordBox x:Name="passwordBox" ToolTip="Введите ваш пароль"/>
+
+            
+            <TextBlock Text="Подтвердите пароль:" Margin="10,10,10,0" Foreground="Gray"/>
+            <PasswordBox x:Name="confirmPasswordBox" ToolTip="Повторите ваш пароль"/>
+
+            <Button Content="Регистрация" Click="RegisterButton_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>
